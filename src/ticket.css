@@ -1,0 +1,78 @@
+.ticket_banner {
+  height: 20vh;
+  width: 80vw;
+  background-color: #f4f2f2;
+  border-bottom: 2px dashed black;
+  border-radius: 15px;
+  margin-left: 40px;
+  display: flex;
+  align-items: center;
+  padding: 0px;
+}
+
+.ticket_banner img {
+  margin-left: 10px;
+  display: none;
+}
+
+.from,
+.to {
+  display: flex;
+  flex-direction: column;
+  margin-left: 50px;
+  align-items: center;
+}
+.from_place,
+.to_place {
+  font-size: 35px;
+  margin-bottom: 5px;
+}
+.from_time {
+  font-size: 15px;
+}
+.details {
+  display: flex;
+  flex-direction: column;
+  margin-left: 100px;
+  margin-right: 100px;
+  align-items: center;
+}
+
+.details_name {
+  font-size: 8px;
+  margin-bottom: 5px;
+}
+
+.details_time {
+  color: green;
+  margin-bottom: 5px;
+  font-size: 25px;
+}
+.details_nonstop {
+  font-size: 15px;
+}
+
+.pribook {
+  display: flex;
+  flex-direction: column;
+  margin-left: 100px;
+}
+
+.pribook .price {
+  font-size: 15px;
+  margin-bottom: 15px;
+}
+
+.pribook .book button {
+  width: 100px;
+  background-color: yellow;
+  border: none;
+  padding:5px;
+  border-bottom: 1px solid black;
+  border-radius: 10px;
+}
+
+.pribook .book button:hover {
+  border: 1px solid black;
+  /* width: 102px; */
+}

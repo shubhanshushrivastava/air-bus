@@ -1,0 +1,86 @@
+.checkout_box {
+  height: 100vh;
+  /* width: 70vw; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background-color: aliceblue;
+}
+
+.summary_box {
+  height: 30vh;
+  width: 30vw;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -40px;
+  margin-bottom: -150px;
+}
+
+.payment_box input {
+  border: none;
+  width: 90%;
+  margin-top: 10px;
+  background-color: rgba(146, 199, 245, 0.44);
+}
+.payment_box button {
+  margin-top: 10px;
+  width: 90px;
+  background-color: yellow;
+  border: none;
+  border-bottom: 1px solid black;
+  border-radius: 8px;
+  padding: 5px;
+}
+
+.payment_box {
+  align-items: center;
+  height: 30vh;
+  width: 30vw;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+}
+.payme{
+    font-size: 25px;
+}
+
+.fare_summary {
+  margin-bottom: 40px;
+  font-size: 30px;
+}
+
+.fareone {
+  /* font-size: large; */
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+  border-bottom: 1px dashed black;
+}
+
+.fareone span,
+.faretwo span,
+.farethree span {
+  font-size: medium;
+}
+
+.faretwo {
+  /* font-size: larger; */
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+  border-bottom: 1px dashed black;
+}
+
+.farethree {
+  /* font-size: larger; */
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  border-bottom: 1px dashed black;
+}

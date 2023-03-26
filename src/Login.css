@@ -1,0 +1,41 @@
+.login_page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-image: url(https://images.wallpaperscraft.com/image/single/silhouette_travel_hill_187424_3840x2400.jpg);
+  background-attachment: scroll;
+  background-size: cover;
+}
+
+.login_box {
+  width: 25vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 40vh;
+  margin: auto;
+  margin-top: 100px;
+  padding-top: 30px;
+  background: rgb(159, 29, 253);
+  background: linear-gradient(
+    90deg,
+    rgba(159, 29, 253, 0.1425420510000875) 0%,
+    rgba(242, 93, 93, 0.1304972330729167) 50%,
+    rgba(127, 194, 6, 0.134002104259672616) 100%
+  );
+  border-radius: 20px;
+  /* border: 1px solid white; */
+  padding: 20px;
+}
+
+.login_box h1 {
+  margin: auto;
+  font-size: 25px;
+  margin-bottom: 20px;
+  margin-left: 150px;
+  font-family: "Marvel", sans-serif;
+}
+/* {
+    text-decoration: none;
+} */

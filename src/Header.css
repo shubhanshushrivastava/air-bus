@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.header {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(246, 246, 17);
+  font-family: 'Roboto Serif', serif;
+  font-weight: bold;
+  border-bottom:1px solid black;
+  border-top:1px solid black;
+
+}
+.header button:hover{
+ /* background-color: rgb(228, 218, 26); */
+ border:2px solid red;
+ /* color: red; */
+}
+.header a {
+  text-decoration: none;
+  color: black;
+  display: flex;
+  align-items: center;
+}
+.logo img {
+  height: 50px;
+  margin-left: 150px;
+}
+
+.log_in {
+  margin-right: 150px;
+  color: black;
+  background-color: yellow;
+  padding: 5px;
+  border-radius: 5px;
+  border: 2px solid black;
+  
+  
+}
