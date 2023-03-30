@@ -1,46 +1,25 @@
-# Getting Started with Create React App and Redux
+web application built with React, HTML, CSS, JavaScript, and Ant Design. The website allows users to search for available flights and book tickets.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+The website uses API calls to retrieve flight data, including flight schedules, prices, and availability. The flight data is displayed to the user in a clear and organized manner, allowing them to easily find and book their desired flight.
 
-## Available Scripts
+Technologies Used
 
-In the project directory, you can run:
+-HTML
+-CSS
+-JavaScript
+-React
+-Firebase
+-Redux
+-API calls
 
-### `npm start`
+-On the home page, users can search for available flights by entering their departure and destination cities, as well as the desired dates and number of passengers.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+-After searching, the website will display a list of available flights with details such as the flight number, departure and arrival times, and price.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+-Users can select the desired flight and enter their personal and payment information to book their tickets.
 
-### `npm test`
+Contributing:
+Contributions to this project are welcome. If you find a bug or would like to suggest a new feature, please create an issue or submit a pull request.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Credits
+This project was built by Shubhanshu Shrivastava,and the flight data used in this project was provided by API that is provided by the NS team.
