@@ -19,6 +19,19 @@
  border:2px solid red;
  /* color: red; */
 }
+.user_name{
+ margin-left: -200px;
+ border: 1px solid black;
+ color:aliceblue;
+ font-weight: 600;
+ font-family: 'Marvel', sans-serif;
+ font-size: 17px;
+ cursor: pointer;
+ width: fit-content;
+ padding: 5px 20px;
+ border-radius: 10px;
+ background-color: #0177b7;
+}
 .header a {
   text-decoration: none;
   color: black;

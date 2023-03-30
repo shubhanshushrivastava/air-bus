@@ -11,14 +11,26 @@ function Home() {
   const navigate = useNavigate();
 
   const handleClick = async () => {
-    const response = await fetch(
-      `https://content.newtonschool.co/v1/pr/63b86a1d735f93791e09cb11/flights?from=${from}&to=${to}`
-    );
-    const data = await response.json();
-    console.log(data);
-
-    navigate("/search",{state :{ tickets: data }});
+    try {
+      const response = await fetch(
+        `https://content.newtonschool.co/v1/pr/63b86a1d735f93791e09cb11/flights?from=${from}&to=${to}`
+      );
+      if (!response.ok) {
+        throw new Error("Response not received");
+      }
+      const data = await response.json();
+      console.log(data);
+      if (data && data.length > 0) { // Check if the data is valid before navigating
+        navigate("/search", { state: { tickets: data } });
+      } else {
+        alert("No flights found");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("Input is not valid");
+    }
   };
+  
 
   return (
     <div className="home">

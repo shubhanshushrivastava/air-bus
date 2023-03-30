@@ -1,68 +1,93 @@
-import React from "react";
-import { LockOutlined, UserOutlined } from "@ant-design/icons";
-import { Button, Checkbox, Form, Input } from "antd";
+import React, { useState } from "react";
 import "./Login.css";
+// import logo from "./images/LI-Logo.png";
+import { useDispatch } from "react-redux";
+import { auth } from "./firebase";
+// import * as firebase from "./firebase";
+import {
+  getAuth,
+  updateProfile,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
+import { login } from "./features/userSlice.js";
 
 function Login() {
-  return (
-    <div className="login_page">
-      <div className="login_box">
-        <h1>LOGIN</h1>
-        <Form
-          name="normal_login"
-          className="login-form"
-          initialValues={{
-            remember: true,
-          }}
-          //   onFinish={onFinish}
-        >
-          <Form.Item
-            name="username"
-            rules={[
-              {
-                required: true,
-                message: "Please input your Username!",
-              },
-            ]}>
-            <Input
-              prefix={<UserOutlined className="site-form-item-icon" />}
-              placeholder="Username"
-            />
-          </Form.Item>
-          <Form.Item
-            name="password"
-            rules={[
-              {
-                required: true,
-                message: "Please input your Password!",
-              },
-            ]}>
-            <Input
-              prefix={<LockOutlined className="site-form-item-icon" />}
-              type="password"
-              placeholder="Password"
-            />
-          </Form.Item>
-          <Form.Item>
-            <Form.Item name="remember" valuePropName="checked" noStyle>
-              <Checkbox>Remember me</Checkbox>
-            </Form.Item>
-          </Form.Item>
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [name, setName] = useState("");
+  const dispatch = useDispatch();
 
-          <Form.Item>
-            <Button
-              type="primary"
-              htmlType="submit"
-              className="login-form-button">
-              Log in
-            </Button>
-            {"   "}Or{"   "}
-            <a href="" className="register">
-              register now!
-            </a>
-          </Form.Item>
-        </Form>
-      </div>
+  const loginToApp = (e) => {
+    e.preventDefault();
+
+    signInWithEmailAndPassword(auth, email, password).then((userAuth) => {
+      dispatch(
+        login({
+          email: userAuth.user.email,
+          uid: userAuth.user.uid,
+          displayName: name,
+        })
+      );
+    }).catch((error) => alert(error));  
+  };
+
+  const register = () => {
+    if (!name) {
+      return alert("Please Enter Your Full Name");
+    }
+
+    const auth = getAuth();
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userAuth) => {
+        updateProfile(userAuth.user, {
+          displayName: name,
+        }).then(() => {
+          dispatch(
+            login({
+              email: userAuth.user.email,
+              uid: userAuth.user.uid,
+              displayName: name,
+            })
+          );
+        });
+      })
+      .catch((error) => alert(error.message));
+  };
+
+  return (
+    <div className="login">
+      {/* <img src={logo} alt="hello" className="login_logo" /> */}
+      <form>
+        <input
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          placeholder="Full name (required if registering)"
+          type="text"
+        />
+        <input
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder="Email"
+          type="email"
+        />
+        <input
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          placeholder="Password"
+          type="password"
+        />
+        <button type="submit" onClick={loginToApp}>
+          Sign In
+        </button>
+      </form>
+      <p>
+        Not a member?{""}
+        <span className="login_register" onClick={register}>
+          {" "}
+          Register Now
+        </span>
+      </p>
     </div>
   );
 }
